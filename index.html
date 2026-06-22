@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kape Lang Dapat — MoodtoMusik | Out July 17, 2026</title>
+
+<meta name="description" content="Pre-save &quot;Kape Lang Dapat,&quot; the debut single from MoodtoMusik. Official release July 17, 2026." />
+<meta name="theme-color" content="#1A1210" />
+<meta name="author" content="MoodtoMusik" />
+<link rel="canonical" href="https://moodtomusik.github.io/" />
+
+<meta property="og:type" content="music.song" />
+<meta property="og:title" content="Kape Lang Dapat — MoodtoMusik" />
+<meta property="og:description" content="Pre-save the debut single from MoodtoMusik. Official release July 17, 2026." />
+<meta property="og:image" content="cover.jpg" />
+<meta property="og:url" content="https://moodtomusik.github.io/" />
+<meta property="og:site_name" content="MoodtoMusik" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Kape Lang Dapat — MoodtoMusik" />
+<meta name="twitter:description" content="Pre-save the debut single. Out July 17, 2026." />
+<meta name="twitter:image" content="cover.jpg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicRecording",
+  "name": "Kape Lang Dapat",
+  "byArtist": { "@type": "MusicGroup", "name": "MoodtoMusik" },
+  "datePublished": "2026-07-17",
+  "image": "cover.jpg",
+  "genre": ["R&B", "Soul", "Hip-Hop", "OPM"],
+  "inLanguage": "tl"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<style>
+  :root{
+    --espresso:#1A1210; --grounds:#2A1E1A; --crema:#C9A36B;
+    --steam:#E8DCC8; --ember:#D9743B; --muted:#A08A78;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{min-height:100%;}
+  body{
+    background:radial-gradient(120% 70% at 50% 12%, #241813 0%, var(--espresso) 50%, #100B09 100%);
+    background-attachment:fixed;
+    color:var(--steam);
+    font-family:"Manrope",system-ui,sans-serif;
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  }
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:5;
+    background:radial-gradient(130% 100% at 50% 35%, transparent 58%, rgba(0,0,0,0.5) 100%);
+    mix-blend-mode:multiply;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:82svh;
+    display:flex;flex-direction:column;
+    padding:clamp(1.4rem,4vw,2.4rem);
+    overflow:hidden;
+  }
+  #scene{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+  .topbar{
+    position:relative;z-index:2;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .brand{font-family:"Space Mono",monospace;font-size:0.92rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--crema);}
+  .brand span{font-weight:400;}
+  .tagline{font-family:"Space Mono",monospace;font-size:0.73rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--muted);text-align:right;}
+  .stage{
+    position:relative;z-index:2;flex:1;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;gap:clamp(0.9rem,2.5vh,1.5rem);padding:1.5rem 0 0.5rem;
+  }
+  .title{
+    font-family:"Fraunces",serif;font-style:italic;font-weight:300;
+    font-size:clamp(2.9rem,12.5vw,7.7rem);line-height:0.9;letter-spacing:-0.01em;
+    color:var(--steam);text-shadow:0 0 60px rgba(201,163,107,0.2);
+  }
+  .title em{display:block;font-style:italic;color:var(--crema);}
+  .hook{
+    max-width:26ch;font-size:clamp(1rem,3vw,1.2rem);line-height:1.5;
+    color:rgba(232,220,200,0.92);font-weight:400;
+  }
+
+  /* ---------- CONTENT ---------- */
+  .content{
+    position:relative;z-index:2;width:100%;max-width:640px;margin:0 auto;
+    padding:clamp(1.6rem,6vw,2.6rem) clamp(1.4rem,5vw,2rem) clamp(2.2rem,6vw,3rem);
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+    gap:clamp(1.7rem,5vw,2.3rem);
+  }
+
+  .cover-card{width:clamp(132px,42vw,210px);}
+  .cover-card img{
+    width:100%;height:auto;display:block;border-radius:14px;
+    border:1px solid rgba(201,163,107,0.55);
+    box-shadow:0 18px 50px -16px rgba(217,116,59,0.45),0 4px 18px rgba(0,0,0,0.5);
+  }
+
+  .section-title{
+    font-family:"Space Mono",monospace;font-weight:700;
+    font-size:clamp(0.82rem,2.8vw,1rem);letter-spacing:0.3em;text-transform:uppercase;color:var(--crema);
+  }
+
+  .video-block{display:flex;flex-direction:column;align-items:center;gap:0.55rem;}
+  .video-wrap{position:relative;width:clamp(220px,72vw,300px);}
+  .video-wrap video{
+    width:100%;height:auto;display:block;border-radius:16px;background:#000;
+    border:1px solid rgba(201,163,107,0.28);box-shadow:0 22px 60px -18px rgba(0,0,0,0.75);
+  }
+  .play-overlay{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;border-radius:16px;
+    background:radial-gradient(circle at center, rgba(0,0,0,0.05), rgba(0,0,0,0.4));
+    transition:opacity 0.25s ease;border:0;
+  }
+  .play-overlay.hidden{opacity:0;pointer-events:none;}
+  .play-btn{
+    width:74px;height:74px;border-radius:50%;background:rgba(201,163,107,0.96);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 34px -8px rgba(217,116,59,0.75);transition:transform 0.2s ease;
+  }
+  .play-overlay:hover .play-btn,.play-overlay:focus-visible .play-btn{transform:scale(1.06);}
+  .play-overlay:focus-visible{outline:2px solid var(--steam);outline-offset:4px;}
+  .play-btn svg{width:30px;height:30px;fill:#1A1210;margin-left:5px;}
+  .video-note{
+    font-family:"Space Mono",monospace;font-size:0.64rem;letter-spacing:0.22em;
+    text-transform:uppercase;color:rgba(232,220,200,0.62);
+  }
+
+  .outdate{
+    font-family:"Space Mono",monospace;font-weight:700;
+    font-size:clamp(1.05rem,4vw,1.5rem);letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--crema);display:flex;align-items:center;gap:0.8rem;
+  }
+  .outdate::before,.outdate::after{content:"";height:1px;width:clamp(14px,5vw,34px);background:rgba(201,163,107,0.5);}
+
+  .countdown{display:flex;gap:clamp(0.9rem,4vw,1.8rem);justify-content:center;}
+  .unit{display:flex;flex-direction:column;align-items:center;gap:0.5rem;min-width:2.4ch;}
+  .num{font-family:"Space Mono",monospace;font-weight:700;font-size:clamp(1.8rem,7vw,2.8rem);color:var(--steam);font-variant-numeric:tabular-nums;line-height:1;}
+  .lbl{font-family:"Space Mono",monospace;font-weight:700;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(232,220,200,0.88);}
+  .outnow{font-family:"Space Mono",monospace;font-weight:700;font-size:clamp(1.6rem,7vw,2.6rem);letter-spacing:0.22em;text-transform:uppercase;color:var(--crema);}
+
+  .cta{
+    appearance:none;border:none;cursor:pointer;
+    font-family:"Manrope",sans-serif;font-weight:700;
+    font-size:clamp(0.95rem,3.6vw,1.08rem);letter-spacing:0.05em;text-transform:uppercase;
+    color:#1A1210;background:var(--crema);padding:1.12rem 3.4rem;border-radius:999px;
+    text-decoration:none;display:inline-flex;align-items:center;gap:0.7rem;
+    box-shadow:0 14px 44px -12px rgba(217,116,59,0.6);
+    transition:transform 0.25s ease,box-shadow 0.35s ease,background 0.25s ease;
+  }
+  .cta:hover,.cta:focus-visible{transform:translateY(-2px);background:#DCB880;box-shadow:0 0 0 6px rgba(201,163,107,0.12),0 18px 54px -10px rgba(217,116,59,0.75);}
+  .cta:focus-visible{outline:2px solid var(--steam);outline-offset:4px;}
+  .cta svg{width:1.05em;height:1.05em;}
+  .streaming{font-family:"Space Mono",monospace;font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(232,220,200,0.7);margin-top:-0.8rem;}
+
+  .foot{
+    display:flex;flex-direction:column;gap:0.35rem;align-items:center;margin-top:0.6rem;
+    font-family:"Space Mono",monospace;font-size:0.64rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);
+  }
+  .foot .sub{color:rgba(160,138,120,0.7);font-size:0.6rem;}
+
+  @media (max-width:420px){
+    .cta{padding:0.98rem 1.9rem;letter-spacing:0.03em;}
+    .countdown{gap:0.75rem;}
+    .title{letter-spacing:-0.02em;}
+    .tagline{font-size:0.66rem;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- 1. HERO: header + title + hook (+ 3D coffee cup behind) -->
+  <section class="hero">
+    <canvas id="scene"></canvas>
+    <header class="topbar">
+      <div class="brand">MOOD<span>TOMUSIK</span></div>
+      <div class="tagline">OPM · R&amp;B · Soul</div>
+    </header>
+    <div class="stage">
+      <h1 class="title">Kape Lang<em>Dapat</em></h1>
+      <p class="hook">Kape lang dapat, ba’t umabot ng sarado?</p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- 5. Official cover art -->
+    <div class="cover-card">
+      <img src="cover-sm.jpg" alt="Kape Lang Dapat official cover art — MoodtoMusik" width="210" height="210" loading="lazy" />
+    </div>
+
+    <!-- 6 + 7. Hook video -->
+    <div class="video-block">
+      <p class="section-title">Hear the Hook</p>
+      <div class="video-wrap">
+        <video id="hookvid" poster="cover-sm.jpg" preload="none" playsinline webkit-playsinline controls>
+          <source src="hook.mp4" type="video/mp4" />
+        </video>
+        <button class="play-overlay" id="playov" aria-label="I-play ang preview">
+          <span class="play-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+        </button>
+      </div>
+      <p class="video-note">Official preview · tap to play</p>
+    </div>
+
+    <!-- 8. Release date -->
+    <p class="outdate">Out July 17, 2026</p>
+
+    <!-- 9. Countdown -->
+    <div class="countdown" id="countdown" aria-label="Countdown sa release">
+      <div class="unit"><span class="num" id="dd">00</span><span class="lbl">Araw</span></div>
+      <div class="unit"><span class="num" id="hh">00</span><span class="lbl">Oras</span></div>
+      <div class="unit"><span class="num" id="mm">00</span><span class="lbl">Min</span></div>
+      <div class="unit"><span class="num" id="ss">00</span><span class="lbl">Sec</span></div>
+    </div>
+    <div class="outnow" id="outnow" hidden>Out Now</div>
+
+    <!-- 10. Pre-save button (same tab) -->
+    <a class="cta" id="cta" href="https://distrokid.com/hyperfollow/moodtomusik/kape-lang-dapat-3">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+      <span id="cta-text">Pre-Save Kape Lang Dapat</span>
+    </a>
+
+    <!-- 11. Streaming text -->
+    <p class="streaming">Spotify · Apple Music · YouTube Music · More</p>
+
+    <!-- 12. Footer -->
+    <footer class="foot">
+      <span>© 2026 MoodtoMusik</span>
+      <span class="sub">RoundBeatsPH</span>
+    </footer>
+  </main>
+
+<script>
+/* ---------- Countdown (visitor local time; target = PH midnight, UTC+8) ---------- */
+(function(){
+  var target=new Date("2026-07-17T00:00:00+08:00").getTime();
+  var dd=document.getElementById("dd"),hh=document.getElementById("hh"),
+      mm=document.getElementById("mm"),ss=document.getElementById("ss"),
+      cd=document.getElementById("countdown"),on=document.getElementById("outnow"),
+      ct=document.getElementById("cta-text");
+  function pad(n){return n<10?"0"+n:""+n;}
+  function tick(){
+    var diff=target-Date.now();
+    if(diff<=0){
+      cd.style.display="none";on.hidden=false;
+      ct.textContent="Stream Kape Lang Dapat";
+      return;
+    }
+    var s=Math.floor(diff/1000);
+    dd.textContent=pad(Math.floor(s/86400));
+    hh.textContent=pad(Math.floor((s%86400)/3600));
+    mm.textContent=pad(Math.floor((s%3600)/60));
+    ss.textContent=pad(s%60);
+  }
+  tick();setInterval(tick,1000);
+})();
+
+/* ---------- Video: tap-to-play, no autoplay, no loop ---------- */
+(function(){
+  var v=document.getElementById("hookvid"),ov=document.getElementById("playov");
+  if(!v||!ov)return;
+  ov.addEventListener("click",function(){ v.play(); });
+  v.addEventListener("play",function(){ ov.classList.add("hidden"); });
+  v.addEventListener("ended",function(){ ov.classList.remove("hidden"); });
+})();
+
+/* ---------- 3D coffee cup + steam (confined to hero) ---------- */
+(function(){
+  if(typeof THREE==="undefined")return;
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var canvas=document.getElementById("scene");
+  var renderer;
+  try{ renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true}); }
+  catch(e){ return; }
+
+  function size(){ return {w:canvas.clientWidth||window.innerWidth, h:canvas.clientHeight||window.innerHeight}; }
+  var s=size();
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.setSize(s.w,s.h,false);
+
+  var scene=new THREE.Scene();
+  var camera=new THREE.PerspectiveCamera(38,s.w/s.h,0.1,100);
+  camera.position.set(0,1.7,6.2);camera.lookAt(0,0.55,0);
+
+  var cup=new THREE.Group();scene.add(cup);
+  var profile=[[0.00,0.00],[0.56,0.00],[0.60,0.05],[0.62,0.14],[0.68,0.55],
+    [0.77,1.02],[0.80,1.12],[0.74,1.12],[0.67,0.55],[0.61,0.18],[0.00,0.18]]
+    .map(function(p){return new THREE.Vector2(p[0],p[1]);});
+  var lathe=new THREE.LatheGeometry(profile,96);
+  var ceramic=new THREE.MeshStandardMaterial({color:0x2a2320,roughness:0.58,metalness:0.06,side:THREE.DoubleSide});
+  cup.add(new THREE.Mesh(lathe,ceramic));
+
+  var coffee=new THREE.Mesh(new THREE.CircleGeometry(0.66,64),
+    new THREE.MeshStandardMaterial({color:0x140c08,roughness:0.25,emissive:0x3a2410,emissiveIntensity:0.35}));
+  coffee.rotation.x=-Math.PI/2;coffee.position.y=0.985;cup.add(coffee);
+
+  var crema=new THREE.Mesh(new THREE.RingGeometry(0.5,0.65,64),
+    new THREE.MeshBasicMaterial({color:0x6e4a26,transparent:true,opacity:0.5,side:THREE.DoubleSide}));
+  crema.rotation.x=-Math.PI/2;crema.position.y=0.99;cup.add(crema);
+
+  var handle=new THREE.Mesh(new THREE.TorusGeometry(0.34,0.075,20,48,Math.PI*1.15),ceramic);
+  handle.position.set(0.78,0.6,0);handle.rotation.z=-0.35;cup.add(handle);
+
+  var saucer=new THREE.Mesh(new THREE.CylinderGeometry(1.25,1.05,0.07,64),
+    new THREE.MeshStandardMaterial({color:0x241d19,roughness:0.5,metalness:0.05}));
+  saucer.position.y=-0.06;cup.add(saucer);
+  cup.position.y=-0.85;
+
+  scene.add(new THREE.AmbientLight(0x3a2a1e,0.7));
+  var key=new THREE.DirectionalLight(0xffd9a0,2.1);key.position.set(3,5,4);scene.add(key);
+  var ember=new THREE.PointLight(0xd9743b,1.7,14);ember.position.set(-2.4,2.0,-2.2);scene.add(ember);
+  var cafe=new THREE.PointLight(0xffe6bf,1.4,10);cafe.position.set(0,3.4,1.2);scene.add(cafe);
+
+  function puff(){
+    var c=document.createElement("canvas");c.width=c.height=64;var g=c.getContext("2d");
+    var gr=g.createRadialGradient(32,32,0,32,32,32);
+    gr.addColorStop(0,"rgba(232,220,200,0.9)");gr.addColorStop(0.4,"rgba(232,220,200,0.25)");gr.addColorStop(1,"rgba(232,220,200,0)");
+    g.fillStyle=gr;g.fillRect(0,0,64,64);return new THREE.CanvasTexture(c);
+  }
+  var COUNT=130,pos=new Float32Array(COUNT*3),seed=new Float32Array(COUNT);
+  for(var i=0;i<COUNT;i++){
+    pos[i*3]=(Math.random()-0.5)*0.7;pos[i*3+1]=0.6+Math.random()*2.6;pos[i*3+2]=(Math.random()-0.5)*0.7;
+    seed[i]=Math.random()*Math.PI*2;
+  }
+  var pgeo=new THREE.BufferGeometry();pgeo.setAttribute("position",new THREE.BufferAttribute(pos,3));
+  var steam=new THREE.Points(pgeo,new THREE.PointsMaterial({size:0.85,map:puff(),transparent:true,opacity:0.5,depthWrite:false,blending:THREE.AdditiveBlending,color:0xE8DCC8}));
+  steam.position.y=-0.45;scene.add(steam);
+
+  var mx=0,my=0,tmx=0,tmy=0;
+  window.addEventListener("mousemove",function(e){tmx=(e.clientX/window.innerWidth-0.5);tmy=(e.clientY/window.innerHeight-0.5);});
+  var t0=performance.now();
+  function animate(now){
+    var t=(now-t0)/1000;
+    if(!reduce){
+      cup.rotation.y=Math.sin(t*0.18)*0.5+t*0.05;
+      var arr=pgeo.attributes.position.array;
+      for(var i=0;i<COUNT;i++){
+        arr[i*3+1]+=0.006+(i%5)*0.0012;
+        arr[i*3]+=Math.sin(t*0.8+seed[i])*0.0016;
+        arr[i*3+2]+=Math.cos(t*0.6+seed[i])*0.0012;
+        if(arr[i*3+1]>3.4){arr[i*3]=(Math.random()-0.5)*0.6;arr[i*3+1]=0.6;arr[i*3+2]=(Math.random()-0.5)*0.6;}
+      }
+      pgeo.attributes.position.needsUpdate=true;
+    }
+    mx+=(tmx-mx)*0.04;my+=(tmy-my)*0.04;
+    var breathe=reduce?0:Math.sin(t*0.5)*0.06;
+    camera.position.x=mx*1.4;camera.position.y=1.7-my*0.8+breathe;camera.lookAt(0,0.55,0);
+    renderer.render(scene,camera);requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+
+  window.addEventListener("resize",function(){
+    var z=size();camera.aspect=z.w/z.h;camera.updateProjectionMatrix();renderer.setSize(z.w,z.h,false);
+  });
+})();
+</script>
+</body>
+</html>

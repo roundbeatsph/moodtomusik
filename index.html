@@ -194,6 +194,108 @@ fbq('track','PageView');
     .title{letter-spacing:-0.02em;}
     .tagline{font-size:0.66rem;}
   }
+
+  /* ---------- FLOATING IMAGE GALLERY (3D) ---------- */
+  .gallery{
+    position:relative;width:100%;min-height:74svh;overflow:hidden;
+    display:flex;flex-direction:column;align-items:center;
+    padding:clamp(2rem,6vw,3.4rem) 1rem 0.5rem;
+  }
+  .gallery .section-title{position:relative;z-index:2;}
+  .gallery-sub{
+    position:relative;z-index:2;margin-top:0.45rem;
+    font-family:"Space Mono",monospace;font-size:0.6rem;letter-spacing:0.22em;
+    text-transform:uppercase;color:rgba(232,220,200,0.5);
+  }
+  #gallery-scene{
+    position:absolute;inset:0;width:100%;height:100%;z-index:1;
+    touch-action:pan-y;cursor:grab;
+  }
+  #gallery-scene:active{cursor:grabbing;}
+  .gallery-hint{
+    position:absolute;bottom:0.9rem;left:50%;transform:translateX(-50%);z-index:2;
+    font-family:"Space Mono",monospace;font-size:0.58rem;letter-spacing:0.24em;
+    text-transform:uppercase;color:rgba(232,220,200,0.38);pointer-events:none;
+  }
+  /* Anthem video — a touch larger than the hook block */
+  .video-wrap.anthem{width:clamp(260px,86vw,520px);}
+  .video-wrap.anthem video{border-radius:18px;}
+  /* Lightbox */
+  .lightbox{
+    position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;
+    background:rgba(8,5,4,0.93);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    padding:1.2rem;cursor:zoom-out;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{
+    max-width:92vw;max-height:88vh;border-radius:14px;
+    border:1px solid rgba(201,163,107,0.45);
+    box-shadow:0 30px 80px -20px rgba(0,0,0,0.85);
+  }
+  .lightbox-close{
+    position:absolute;top:0.9rem;right:1.1rem;width:42px;height:42px;border-radius:50%;
+    border:1px solid rgba(201,163,107,0.4);background:rgba(26,18,16,0.7);color:var(--steam);
+    font-size:1.5rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  }
+
+  /* ---------- JOIN THE MOOD (socials) ---------- */
+  .join{
+    position:relative;z-index:2;width:100%;max-width:640px;margin:0 auto;
+    padding:clamp(2.2rem,7vw,3.2rem) clamp(1.4rem,5vw,2rem) clamp(1rem,4vw,1.4rem);
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+    gap:clamp(1.1rem,4vw,1.5rem);border-top:1px solid rgba(201,163,107,0.16);
+  }
+  .join h2{
+    font-family:"Space Mono",monospace;font-weight:700;
+    font-size:clamp(1.05rem,4vw,1.5rem);letter-spacing:0.22em;text-transform:uppercase;color:var(--crema);
+  }
+  .join-copy{max-width:42ch;font-size:clamp(0.95rem,2.8vw,1.05rem);line-height:1.6;color:rgba(232,220,200,0.85);}
+  .socials{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:0.7rem;margin-top:0.1rem;}
+  .social-btn{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;
+    padding:1rem 0.5rem;border-radius:14px;text-decoration:none;
+    border:1px solid rgba(201,163,107,0.28);background:rgba(201,163,107,0.04);
+    transition:transform .2s ease,background .25s ease,border-color .25s ease;
+  }
+  .social-btn:hover,.social-btn:focus-visible{
+    transform:translateY(-3px);background:rgba(201,163,107,0.12);border-color:rgba(201,163,107,0.6);outline:none;
+  }
+  .social-btn svg{width:24px;height:24px;fill:var(--crema);}
+  .social-btn span{
+    font-family:"Space Mono",monospace;font-size:0.56rem;font-weight:700;letter-spacing:0.13em;
+    text-transform:uppercase;color:rgba(232,220,200,0.82);line-height:1.3;
+  }
+  .join-close{
+    max-width:40ch;font-family:"Fraunces",serif;font-style:italic;font-weight:300;
+    font-size:clamp(1.05rem,3.4vw,1.3rem);line-height:1.5;color:var(--steam);margin-top:0.4rem;
+  }
+  .join-cta{
+    appearance:none;border:1px solid rgba(201,163,107,0.5);cursor:pointer;
+    font-family:"Space Mono",monospace;font-weight:700;font-size:0.74rem;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--crema);background:transparent;padding:0.85rem 2.2rem;border-radius:999px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:0.6rem;transition:background .25s ease,color .25s ease,transform .2s ease;
+  }
+  .join-cta:hover,.join-cta:focus-visible{background:var(--crema);color:#1A1210;transform:translateY(-2px);outline:none;}
+  .join-cta svg{width:1em;height:1em;fill:currentColor;}
+  @media (max-width:560px){
+    .socials{grid-template-columns:repeat(2,1fr);gap:0.6rem;}
+  }
+
+  /* ---------- ANTHEM: YouTube lite embed ---------- */
+  .video-wrap.anthem.yt-lite{
+    position:relative;aspect-ratio:16/9;width:clamp(260px,90vw,560px);
+    border-radius:18px;overflow:hidden;cursor:pointer;
+    border:1px solid rgba(201,163,107,0.28);
+    background:radial-gradient(120% 120% at 50% 30%, #2A1E1A, #120B09);
+    box-shadow:0 22px 60px -18px rgba(0,0,0,0.75);
+  }
+  .yt-lite .yt-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border:0;}
+  .yt-lite .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transition:transform .2s ease;}
+  .yt-lite:hover .play-btn,.yt-lite:focus-visible .play-btn{transform:translate(-50%,-50%) scale(1.08);}
+  .yt-lite:focus-visible{outline:2px solid var(--steam);outline-offset:4px;}
+  .yt-lite::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at center, rgba(0,0,0,0.04), rgba(0,0,0,0.34));}
+  .yt-lite iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .yt-lite.playing::after,.yt-lite.playing .play-btn{display:none;}
 </style>
 </head>
 <body>
@@ -209,6 +311,14 @@ fbq('track','PageView');
       <h1 class="title">Kape Lang<em>Dapat</em></h1>
       <p class="hook">Kape lang dapat, ba’t umabot ng sarado?</p>
     </div>
+  </section>
+
+  <!-- FLOATING IMAGE GALLERY (3D) -->
+  <section class="gallery" id="gallery">
+    <p class="section-title">The Mood</p>
+    <p class="gallery-sub">Kape Lang Dapat · in frames</p>
+    <canvas id="gallery-scene"></canvas>
+    <p class="gallery-hint">drag &middot; tap to open</p>
   </section>
 
   <!-- CONTENT -->
@@ -233,6 +343,17 @@ fbq('track','PageView');
       <p class="video-note">Official preview · tap to play</p>
     </div>
 
+    <!-- 6b. MoodtoMusik Anthem (YouTube lite embed) -->
+    <div class="video-block">
+      <p class="section-title">The MoodtoMusik Anthem</p>
+      <!-- ===> Palitan ang YOUTUBE_ID ng video ID mo (yung nasa youtube.com/watch?v=___) <=== -->
+      <div class="video-wrap anthem yt-lite" id="anthemyt" data-id="YaUxjlAvT_Y" role="button" tabindex="0" aria-label="I-play ang MoodtoMusik anthem">
+        <img class="yt-poster" id="anthemposter" alt="MoodtoMusik anthem" />
+        <span class="play-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+      </div>
+      <p class="video-note">MoodtoMusik &middot; the signature track</p>
+    </div>
+
     <!-- 8. Release date -->
     <p class="outdate">Out July 17, 2026</p>
 
@@ -253,6 +374,20 @@ fbq('track','PageView');
 
     <!-- 11. Streaming text -->
     <p class="streaming">Spotify · Apple Music · YouTube Music · More</p>
+
+    <!-- 11b. JOIN THE MOOD -->
+    <section class="join" id="join">
+      <h2>Join the Mood</h2>
+      <p class="join-copy">Music for the feelings you couldn&rsquo;t say out loud. Follow MoodtoMusik for new songs, official videos, behind-the-scenes moments, and the story behind every track.</p>
+      <div class="socials">
+        <a class="social-btn" href="https://www.facebook.com/MoodtoMusikOfficial" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg><span>Follow on Facebook</span></a>
+        <a class="social-btn" href="https://www.instagram.com/moodtomusik/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.07.05 1.8.22 2.43.47.66.25 1.22.59 1.77 1.14.55.55.89 1.11 1.14 1.77.25.63.42 1.36.47 2.43.05 1.07.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.07-.22 1.8-.47 2.43a4.9 4.9 0 0 1-1.14 1.77c-.55.55-1.11.89-1.77 1.14-.63.25-1.36.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.07-.05-1.8-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.14 4.9 4.9 0 0 1-1.14-1.77c-.25-.63-.42-1.36-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.07.22-1.8.47-2.43.25-.66.59-1.22 1.14-1.77.55-.55 1.11-.89 1.77-1.14.63-.25 1.36-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-.98.04-1.51.21-1.86.35-.47.18-.8.4-1.15.75-.35.35-.57.68-.75 1.15-.14.35-.31.88-.35 1.86-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.98.21 1.51.35 1.86.18.47.4.8.75 1.15.35.35.68.57 1.15.75.35.14.88.31 1.86.35 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.98-.04 1.51-.21 1.86-.35.47-.18.8-.4 1.15-.75.35-.35.57-.68.75-1.15.14-.35.31-.88.35-1.86.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.98-.21-1.51-.35-1.86a3.1 3.1 0 0 0-.75-1.15 3.1 3.1 0 0 0-1.15-.75c-.35-.14-.88-.31-1.86-.35-1.05-.05-1.37-.06-4.04-.06zm0 3.06A5.14 5.14 0 1 1 6.86 12 5.14 5.14 0 0 1 12 6.86zm0 1.8A3.34 3.34 0 1 0 15.34 12 3.34 3.34 0 0 0 12 8.66zm5.34-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg><span>Follow on Instagram</span></a>
+        <a class="social-btn" href="https://www.youtube.com/@MoodtoMusik" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.5a3 3 0 0 0-2.1-2.12C19.05 4.88 12 4.88 12 4.88s-7.05 0-8.9.5A3 3 0 0 0 1 7.5 31.3 31.3 0 0 0 .5 12 31.3 31.3 0 0 0 1 16.5a3 3 0 0 0 2.1 2.12c1.85.5 8.9.5 8.9.5s7.05 0 8.9-.5A3 3 0 0 0 23 16.5 31.3 31.3 0 0 0 23.5 12 31.3 31.3 0 0 0 23 7.5zM9.75 15.5v-7l6 3.5z"/></svg><span>Subscribe on YouTube</span></a>
+        <a class="social-btn" href="https://www.tiktok.com/@moodtomusikofficial" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.2v12.2a2.42 2.42 0 1 1-2.42-2.42c.17 0 .34.02.5.05V9.6a5.66 5.66 0 0 0-.5-.03 5.62 5.62 0 1 0 5.62 5.62V9.01a7.46 7.46 0 0 0 4.36 1.4V7.2a4.28 4.28 0 0 1-2.8-1.38z"/></svg><span>Follow on TikTok</span></a>
+      </div>
+      <p class="join-close">This is only the beginning. Follow the journey and be here before everyone else hears it.</p>
+      <a class="join-cta" href="https://www.facebook.com/MoodtoMusikOfficial" target="_blank" rel="noopener noreferrer">Follow MoodtoMusik</a>
+    </section>
 
     <!-- 12. Footer -->
     <footer class="foot">
@@ -391,6 +526,162 @@ fbq('track','PageView');
   window.addEventListener("resize",function(){
     var z=size();camera.aspect=z.w/z.h;camera.updateProjectionMatrix();renderer.setSize(z.w,z.h,false);
   });
+})();
+</script>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Isara">&times;</button>
+  <img id="lightbox-img" alt="MoodtoMusik — Kape Lang Dapat" />
+</div>
+
+<script>
+/* ---------- Anthem: YouTube lite embed ---------- */
+(function(){
+  var el=document.getElementById("anthemyt"); if(!el)return;
+  var id=el.getAttribute("data-id");
+  var poster=document.getElementById("anthemposter");
+  var ready=(id && id!=="YOUTUBE_ID");
+  if(poster && ready){
+    poster.src="https://img.youtube.com/vi/"+id+"/maxresdefault.jpg";
+    poster.onerror=function(){ poster.onerror=null; poster.src="https://img.youtube.com/vi/"+id+"/hqdefault.jpg"; };
+  }
+  function play(){
+    if(!ready)return;
+    var f=document.createElement("iframe");
+    f.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+    f.setAttribute("allowfullscreen","");
+    f.src="https://www.youtube.com/embed/"+id+"?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+    el.innerHTML=""; el.appendChild(f); el.classList.add("playing");
+    if(window.fbq){ fbq("trackCustom","AnthemPlay",{content_name:"MoodtoMusik anthem"}); }
+  }
+  el.addEventListener("click",play);
+  el.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); play(); } });
+})();
+
+/* ---------- Floating 3D image gallery ---------- */
+(function(){
+  if(typeof THREE==="undefined")return;
+  var GALLERY=["float-1.jpg","float-2.jpg","float-3.jpg","float-4.jpg","float-5.jpg","float-6.jpg","float-7.jpg","float-8.jpg"];
+  var canvas=document.getElementById("gallery-scene");
+  if(!canvas)return;
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var started=false;
+
+  function init(){
+    if(started)return; started=true;
+    var renderer;
+    try{ renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true}); }
+    catch(e){ return; }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+    if("outputEncoding" in renderer){ renderer.outputEncoding=THREE.sRGBEncoding; }
+
+    function size(){ return {w:canvas.clientWidth||window.innerWidth, h:canvas.clientHeight||window.innerHeight}; }
+    var s=size();
+    renderer.setSize(s.w,s.h,false);
+
+    var scene=new THREE.Scene();
+    var camera=new THREE.PerspectiveCamera(42, s.w/s.h, 0.1, 100);
+    camera.position.set(0,0,7.4);
+    scene.add(new THREE.AmbientLight(0xffffff,1.0));
+
+    var group=new THREE.Group(); scene.add(group);
+    var loader=new THREE.TextureLoader();
+    var N=GALLERY.length, R=3.3, planes=[];
+
+    GALLERY.forEach(function(src,i){
+      var mat=new THREE.MeshBasicMaterial({transparent:false});
+      var mesh=new THREE.Mesh(new THREE.PlaneGeometry(1,1),mat);
+      var frame=new THREE.Mesh(new THREE.PlaneGeometry(1,1),
+        new THREE.MeshBasicMaterial({color:0xC9A36B,transparent:true,opacity:0.22}));
+      frame.position.z=-0.02;
+      // sensible defaults before texture loads (assume vertical)
+      mesh.scale.set(1.27,2.25,1); frame.scale.set(1.39,2.37,1);
+      var holder=new THREE.Group(); holder.add(frame); holder.add(mesh);
+      var ang=(i/N)*Math.PI*2;
+      holder.userData={baseY:(Math.random()-0.5)*1.1, phase:Math.random()*Math.PI*2, src:src, mesh:mesh};
+      holder.position.set(Math.cos(ang)*R, holder.userData.baseY, Math.sin(ang)*R);
+      group.add(holder); planes.push(holder);
+
+      var tex=loader.load(src,function(t){
+        var img=t.image; if(!img)return;
+        var ar=img.width/img.height;
+        var H = ar>=1 ? 1.55 : 2.25;
+        var W = H*ar;
+        mesh.scale.set(W,H,1); frame.scale.set(W+0.12,H+0.12,1);
+      });
+      if("encoding" in tex){ tex.encoding=THREE.sRGBEncoding; }
+      tex.minFilter=THREE.LinearFilter;
+      mat.map=tex; mat.needsUpdate=true;
+    });
+
+    var tRot=0, vRot=0, dragging=false, lastX=0, autoSpin=reduce?0:0.0017;
+    var mx=0,tmx=0,my=0,tmy=0, downX=0, downY=0, moved=0;
+
+    function px(e){ return e.touches?e.touches[0].clientX:e.clientX; }
+    function py(e){ return e.touches?e.touches[0].clientY:e.clientY; }
+    function onDown(e){ dragging=true; lastX=px(e); vRot=0; downX=px(e); downY=py(e); moved=0; }
+    function onMove(e){
+      var cx=px(e), cy=py(e);
+      if(dragging){ var dx=cx-lastX; lastX=cx; vRot=dx*0.005; tRot+=vRot; moved+=Math.abs(dx); }
+      var rect=canvas.getBoundingClientRect();
+      tmx=((cx-rect.left)/rect.width-0.5);
+      tmy=((cy-rect.top)/rect.height-0.5);
+    }
+    function onUp(){ dragging=false; }
+    canvas.addEventListener("mousedown",onDown);
+    canvas.addEventListener("touchstart",onDown,{passive:true});
+    window.addEventListener("mousemove",onMove);
+    canvas.addEventListener("touchmove",onMove,{passive:true});
+    window.addEventListener("mouseup",onUp);
+    window.addEventListener("touchend",onUp);
+
+    var ray=new THREE.Raycaster(), ndc=new THREE.Vector2();
+    canvas.addEventListener("click",function(e){
+      if(Math.abs(e.clientX-downX)+Math.abs(e.clientY-downY)>8 || moved>8) return; // it was a drag
+      var rect=canvas.getBoundingClientRect();
+      ndc.x=((e.clientX-rect.left)/rect.width)*2-1;
+      ndc.y=-((e.clientY-rect.top)/rect.height)*2+1;
+      ray.setFromCamera(ndc,camera);
+      var meshes=planes.map(function(h){return h.userData.mesh;});
+      var hit=ray.intersectObjects(meshes,false)[0];
+      if(hit){ openLightbox(hit.object.parent.userData.src); }
+    });
+
+    var t0=performance.now();
+    function animate(now){
+      var t=(now-t0)/1000;
+      if(!dragging){ tRot+=autoSpin; vRot*=0.94; tRot+=vRot; }
+      group.rotation.y=tRot;
+      planes.forEach(function(h){
+        if(!reduce){ h.position.y=h.userData.baseY+Math.sin(t*0.6+h.userData.phase)*0.18; }
+        h.rotation.y=-tRot; // keep cards facing forward while the ring orbits
+      });
+      mx+=(tmx-mx)*0.05; my+=(tmy-my)*0.05;
+      camera.position.x=mx*1.3; camera.position.y=-my*0.9; camera.lookAt(0,0,0);
+      renderer.render(scene,camera);
+      requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+
+    window.addEventListener("resize",function(){
+      var z=size(); camera.aspect=z.w/z.h; camera.updateProjectionMatrix(); renderer.setSize(z.w,z.h,false);
+    });
+  }
+
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ init(); io.disconnect(); } });
+    },{rootMargin:"200px"});
+    io.observe(canvas);
+  } else { init(); }
+
+  function openLightbox(src){
+    var lb=document.getElementById("lightbox"), im=document.getElementById("lightbox-img");
+    if(!lb||!im)return; im.src=src; lb.classList.add("open");
+  }
+  var lb=document.getElementById("lightbox");
+  if(lb){ lb.addEventListener("click",function(){ lb.classList.remove("open"); }); }
 })();
 </script>
 </body>
